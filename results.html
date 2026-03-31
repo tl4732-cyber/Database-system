@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Results</title>
+</head>
+
+<body>
+
+    <h2>Available Flights</h2>
+
+    <table border="1">
+        <tr>
+            <th>Flight Number</th>
+            <th>Departure Date</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Action</th>
+        </tr>
+
+        {% for f in flights %}
+        <tr>
+            <td>{{ f[0] }}</td> <!-- flight_number -->
+            <td>{{ f[1] }}</td> <!-- departure_date -->
+            <td>{{ f[2] }}</td> <!-- origin -->
+            <td>{{ f[3] }}</td> <!-- dest -->
+            <td>
+                <a href="/flight/{{ f[0] }}/{{ f[1] }}">
+                    View
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+
+</html>
